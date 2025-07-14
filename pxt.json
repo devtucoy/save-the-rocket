@@ -4,7 +4,9 @@
     "dependencies": {
         "device": "*",
         "arcade-background-scroll": "github:microsoft/arcade-background-scroll#v0.1.2",
-        "arcade-text": "github:microsoft/arcade-text#v1.3.0"
+        "arcade-text": "github:microsoft/arcade-text#v1.3.0",
+        "Timers": "github:microsoft/arcade-timers#v1.1.0",
+        "settings-blocks": "github:microsoft/pxt-settings-blocks#v1.0.0"
     },
     "files": [
         "main.blocks",

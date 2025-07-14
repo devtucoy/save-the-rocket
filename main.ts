@@ -20,7 +20,8 @@ function SetMove (X: number, Y: number) {
     scroller.scrollBackgroundWithSpeed(X * (speed * 0.1), Y * (speed * 0.1), scroller.BackgroundLayer.Layer0)
 }
 info.onLifeZero(function () {
-    game.setGameOverMessage(false, "GAME OVER!")
+    game.setGameOverScoringType(game.ScoringType.HighScore)
+    game.setGameOverMessage(false, "Game over!")
     game.setGameOverEffect(false, effects.blizzard)
     game.gameOver(false)
 })
@@ -39,78 +40,76 @@ let speed = 0
 let MoveMode = 0
 let RocketSprite: Sprite = null
 let started = 0
+if (!(blockSettings.exists("tutorial"))) {
+    blockSettings.writeNumber("tutorial", 0)
+}
 started = 0
 RocketSprite = sprites.create(assets.image`Rocket-up`, SpriteKind.Player)
 MoveMode = 0
 speed = 50
 scroller.setLayerImage(scroller.BackgroundLayer.Layer0, assets.image`spaceLAYER1`)
 scroller.setBackgroundScrollOffset(0, 0)
-game.splash("Save The Rocket!", "- the first space -")
-game.setDialogFrame(img`
-    . 1 1 1 1 1 1 1 1 1 7 2 1 1 . 
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-    1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 f f f f f f f f f f f f f 1 
-    1 1 f f f f f f f f f f f 1 1 
-    1 1 1 f f f f f f f f f 1 1 1 
-    . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
-    `)
-game.setDialogCursor(img`
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
-    . . 7 . . . . . . . . . . 7 . . 
-    . . 7 . . . . 7 7 . . . . 7 . . 
-    . . 7 . . . 7 . . 7 . . . 7 . . 
-    . . 7 . . . 7 . . 7 . . . 7 . . 
-    . . 7 . . 7 . . . . 7 . . 7 . . 
-    . . 7 . . 7 . . . . 7 . . 7 . . 
-    . . 7 . . 7 7 7 7 7 7 . . 7 . . 
-    . . 7 . 7 . . . . . . 7 . 7 . . 
-    . . 7 . 7 . . . . . . 7 . 7 . . 
-    . . 7 . . . . . . . . . . 7 . . 
-    . . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
-    . . . . . . . . . . . . . . . . 
-    . . . . . . . . . . . . . . . . 
-    `)
-game.setDialogTextColor(7)
-game.showLongText("Welcome to the first space!", DialogLayout.Bottom)
-game.showLongText("Just keep your rocket safe! okay?", DialogLayout.Bottom)
-game.showLongText("Press the arrow keys to move the rocket.", DialogLayout.Bottom)
-game.showLongText("And run away from the enemies.", DialogLayout.Bottom)
-game.showLongText("Be careful, they will get faster as you go!", DialogLayout.Bottom)
-game.showLongText("Good luck. Keep an eye on the rocket as much as you can!", DialogLayout.Bottom)
+game.splash("Save The Rocket!", "by JJJ")
+if (blockSettings.readNumber("tutorial") == 0) {
+    game.setDialogFrame(img`
+        . 1 1 1 1 1 1 1 1 1 7 2 1 1 . 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 f f f f f f f f f f f f f 1 
+        1 1 f f f f f f f f f f f 1 1 
+        1 1 1 f f f f f f f f f 1 1 1 
+        . 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+        `)
+    game.setDialogCursor(img`
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        . . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
+        . . 7 . . . . . . . . . . 7 . . 
+        . . 7 . . . . 7 7 . . . . 7 . . 
+        . . 7 . . . 7 . . 7 . . . 7 . . 
+        . . 7 . . . 7 . . 7 . . . 7 . . 
+        . . 7 . . 7 . . . . 7 . . 7 . . 
+        . . 7 . . 7 . . . . 7 . . 7 . . 
+        . . 7 . . 7 7 7 7 7 7 . . 7 . . 
+        . . 7 . 7 . . . . . . 7 . 7 . . 
+        . . 7 . 7 . . . . . . 7 . 7 . . 
+        . . 7 . . . . . . . . . . 7 . . 
+        . . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
+        . . . . . . . . . . . . . . . . 
+        . . . . . . . . . . . . . . . . 
+        `)
+    game.setDialogTextColor(7)
+    game.showLongText("Welcome to the space!", DialogLayout.Bottom)
+    game.showLongText("Just keep your rocket safe! okay?", DialogLayout.Bottom)
+    game.showLongText("Press the arrow keys to move the rocket.", DialogLayout.Bottom)
+    game.showLongText("And run away from the enemies.", DialogLayout.Bottom)
+    game.showLongText("Be careful, they will get faster as you go!", DialogLayout.Bottom)
+    game.showLongText("Good luck. Keep an eye on the rocket as much as you can!", DialogLayout.Bottom)
+    blockSettings.writeNumber("tutorial", 1)
+}
 game.onUpdateInterval(1000, function () {
     music.play(music.createSoundEffect(WaveShape.Noise, 715, 1945, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
-    SpaceTrash = sprites.create(img`
-        . . . . . . . . . . . . . . . . 
-        . . . . c c c c c c c . . . . . 
-        . . . c c c c c c c c c . . . . 
-        . . c c c c c c c c c c c . . . 
-        . c c c c c c f f f f f c c . . 
-        . c f c c c f 2 2 2 2 f c c . . 
-        . f 2 f c c f 2 f f 2 f f c . . 
-        . c f c c c f 2 f f f 2 f c . . 
-        . c f f c c f 2 2 2 2 2 f c . . 
-        . f 2 2 f c f f f 2 f f f c . . 
-        . f 2 2 2 f f f 2 2 f c c c . . 
-        . . f 2 2 2 2 2 2 2 f c c . . . 
-        . . . f 2 2 2 2 2 2 f c . . . . 
-        . . . . f f 2 2 f f c . . . . . 
-        . . . . . . f f . . . . . . . . 
-        . . . . . . . . . . . . . . . . 
-        `, SpriteKind.Enemy)
-    SpaceTrash.x = scene.screenWidth()
+    SpaceTrash = sprites.create(assets.image`enemy_1`, SpriteKind.Enemy)
+    SpaceTrash.x = scene.screenWidth() + 10
     SpaceTrash.y = randint(0, scene.screenHeight())
     SpaceTrash.setVelocity(-50 - game.runtime() / 1000, 0)
+    if (info.score() > 1000) {
+        music.play(music.createSoundEffect(WaveShape.Noise, 1637, 1945, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
+        SpaceTrash = sprites.create(assets.image`enemy_2`, SpriteKind.Enemy)
+        SpaceTrash.x = -10
+        SpaceTrash.y = randint(0, scene.screenHeight())
+        SpaceTrash.setVelocity(50 + game.runtime() / 1000, 0)
+    } else {
+    	
+    }
 })
 forever(function () {
     if (MoveMode == 1) {
@@ -141,4 +140,5 @@ forever(function () {
             MoveMode = 3
         }
     }
+    info.changeScoreBy(1)
 })

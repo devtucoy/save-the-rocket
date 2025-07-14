@@ -29,6 +29,16 @@
         "mimeType": "image/x-mkcd-f4",
         "displayName": "Rocket-right"
     },
+    "image8": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAzM/8DwAAAMD88i/yAAAAzMzPLyIPAMDMzMz8IvIAwMzMzMwv8gDAzPz//y8iD8DMLyLyLyIPwMwv//Ii8gDAzC//IiLyAMDML/Ly/88AAMz/L/LMDAAAwMz//8wAAAAAzMzMDAAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy_1"
+    },
+    "image7": {
+        "data": "hwQQABAAAAAAAAAAAAAAAAAAqv+qCgAAAKD6qPr/AAAAqvqpqv8PAKCqqv+q+v8AoKqqqqqq/wCgqqqqqqofD6Cqqvqvqh8PoKqqj6r6/wCgqvqZqv/xAKCqqp/6H/EAAKqq+h/xDwAAoKqq+q8AAAAAqqqqCgAAAAAAAAAAAAAAAAAAAAAAAA==",
+        "mimeType": "image/x-mkcd-f4",
+        "displayName": "enemy_2"
+    },
     "*": {
         "mimeType": "image/x-mkcd-f4",
         "dataEncoding": "base64",
