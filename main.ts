@@ -101,7 +101,7 @@ game.onUpdateInterval(1000, function () {
     SpaceTrash.x = scene.screenWidth() + 10
     SpaceTrash.y = randint(0, scene.screenHeight())
     SpaceTrash.setVelocity(-50 - game.runtime() / 1000, 0)
-    if (info.score() > 1000) {
+    if (info.score() > 2000) {
         music.play(music.createSoundEffect(WaveShape.Noise, 1637, 1945, 255, 0, 500, SoundExpressionEffect.None, InterpolationCurve.Linear), music.PlaybackMode.InBackground)
         SpaceTrash = sprites.create(assets.image`enemy_2`, SpriteKind.Enemy)
         SpaceTrash.x = -10
