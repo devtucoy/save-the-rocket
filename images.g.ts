@@ -272,6 +272,100 @@ namespace myImages {
 ................
 ................
 `;
+            case "image8":
+            case "enemy_1":return img`
+. . . . . . . . . . . . . . . . 
+. . . . c c c c c c c . . . . . 
+. . . c c c c c c c c c . . . . 
+. . c c c c c c c c c c c . . . 
+. c c c c c c f f f f f c c . . 
+. c f c c c f 2 2 2 2 f c c . . 
+. f 2 f c c f 2 f f 2 f f c . . 
+. c f c c c f 2 f f f 2 f c . . 
+. c f f c c f 2 2 2 2 2 f c . . 
+. f 2 2 f c f f f 2 f f f c . . 
+. f 2 2 2 f f f 2 2 f c c c . . 
+. . f 2 2 2 2 2 2 2 f c c . . . 
+. . . f 2 2 2 2 2 2 f c . . . . 
+. . . . f f 2 2 f f c . . . . . 
+. . . . . . f f . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image7":
+            case "Heal":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . 1 1 1 . . . . 1 1 1 . . . 
+. . 1 3 3 3 1 . . 1 3 3 3 1 . . 
+. 1 3 3 2 3 3 1 1 3 3 2 3 3 1 . 
+. 1 3 2 2 2 3 1 1 3 2 2 2 3 1 . 
+. 1 3 2 2 2 2 3 3 2 2 2 2 3 1 . 
+. 1 3 2 2 2 2 2 2 2 2 2 2 3 1 . 
+. 1 3 3 2 2 2 2 2 2 2 2 3 3 1 . 
+. . 1 3 3 3 2 2 2 2 3 3 3 1 . . 
+. . . 1 1 3 3 2 2 3 3 1 1 . . . 
+. . . . . 1 3 3 3 3 1 . . . . . 
+. . . . . . 1 3 3 1 . . . . . . 
+. . . . . . . 1 1 . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "?Cp)d@=zuNu^av_:Db5o":
+            case "tablet":return img`
+. 1 1 1 1 1 1 1 1 1 7 2 1 1 . 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 1 1 1 1 1 1 1 1 1 1 1 1 1 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 f f f f f f f f f f f f f 1 
+1 1 f f f f f f f f f f f 1 1 
+1 1 1 f f f f f f f f f 1 1 1 
+. 1 1 1 1 1 1 1 1 1 1 1 1 1 . 
+`;
+            case "N[Ud$PN(w;,MG3[,8|K/":
+            case "key":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
+. . 7 . . . . . . . . . . 7 . . 
+. . 7 . . . . 7 7 . . . . 7 . . 
+. . 7 . . . 7 . . 7 . . . 7 . . 
+. . 7 . . . 7 . . 7 . . . 7 . . 
+. . 7 . . 7 . . . . 7 . . 7 . . 
+. . 7 . . 7 . . . . 7 . . 7 . . 
+. . 7 . . 7 7 7 7 7 7 . . 7 . . 
+. . 7 . 7 . . . . . . 7 . 7 . . 
+. . 7 . 7 . . . . . . 7 . 7 . . 
+. . 7 . . . . . . . . . . 7 . . 
+. . 7 7 7 7 7 7 7 7 7 7 7 7 . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
+            case "image9":
+            case "enemy_2":return img`
+. . . . . . . . . . . . . . . . 
+. . . . . 1 1 1 1 1 1 1 . . . . 
+. . . . 1 1 1 1 1 1 1 1 1 . . . 
+. . . 1 1 f f f f f f f f 1 . . 
+. . 1 1 f f f f f f f f f f 1 . 
+. . 1 1 f f 2 2 2 f f f f f 5 . 
+. . 1 1 f f 2 2 2 f f f 2 2 2 . 
+. . 1 f f f 2 2 2 f f f 2 2 2 . 
+. . 1 f f f 2 2 f f f f 2 2 f . 
+. . 1 f f f 2 2 2 f f f 2 2 2 . 
+. . 1 f f f f f f f f f f f 5 . 
+. . . 1 f f f f f f f f f 5 . . 
+. . . . 5 f f f f f f f 5 . . . 
+. . . . . 5 5 f f f 5 5 . . . . 
+. . . . . . . 5 5 5 . . . . . . 
+. . . . . . . . . . . . . . . . 
+`;
             case "image4":
             case "Rocket-down":return img`
 ................
@@ -332,44 +426,6 @@ f99991111111f54442..
 .......f............
 ....................
 ....................
-`;
-            case "image8":
-            case "enemy_1":return img`
-. . . . . . . . . . . . . . . . 
-. . . . c c c c c c c . . . . . 
-. . . c c c c c c c c c . . . . 
-. . c c c c c c c c c c c . . . 
-. c c c c c c f f f f f c c . . 
-. c f c c c f 2 2 2 2 f c c . . 
-. f 2 f c c f 2 f f 2 f f c . . 
-. c f c c c f 2 f f f 2 f c . . 
-. c f f c c f 2 2 2 2 2 f c . . 
-. f 2 2 f c f f f 2 f f f c . . 
-. f 2 2 2 f f f 2 2 f c c c . . 
-. . f 2 2 2 2 2 2 2 f c c . . . 
-. . . f 2 2 2 2 2 2 f c . . . . 
-. . . . f f 2 2 f f c . . . . . 
-. . . . . . f f . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-`;
-            case "image7":
-            case "enemy_2":return img`
-. . . . . . . . . . . . . . . . 
-. . . . a a a a a a a . . . . . 
-. . . a a a a a a a a a . . . . 
-. . a a a a a a a a a a a . . . 
-. a a a a a a a a a a a a a . . 
-. a f f a a a a a f a a a a . . 
-. f 8 9 f a a a f 9 f a a a . . 
-. f a a f a a f 8 9 9 f a a . . 
-. a a a a a a f a a a f a a . . 
-. a f a a a a a a a f 1 f a . . 
-. a f f a a a a a f f 1 f a . . 
-. . f f f a a a f f 1 f a . . . 
-. . . f f f f f f 1 1 f . . . . 
-. . . . f f 1 1 f f f . . . . . 
-. . . . . . f f . . . . . . . . 
-. . . . . . . . . . . . . . . . 
 `;
         }
         return null;
