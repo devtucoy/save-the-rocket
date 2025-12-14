@@ -1,4 +1,4 @@
- 
+ a Game made for my school project ;)
 
 
 > 이 페이지를 [https://devtucoy.github.io/save-the-rocket/](https://devtucoy.github.io/save-the-rocket/)으로 열기
